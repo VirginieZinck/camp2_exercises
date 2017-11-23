@@ -12,3 +12,23 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~X~~~~~~~~~~~~~~~~~~~~~~~
 // ```
+let stdout = "";
+
+for (let i=0;i<9;i++) {
+  for (let j=0;j<30;j++) {
+
+    if ((i===2-1 && j===25-1) || (i===9-1 && j===7-1)) {
+      stdout = stdout + "X";
+    }
+    else if ((i===4-1 && j===6-1) || (i===7-1 && j === 18-1)) {
+      stdout = stdout + "0";
+    }
+    else {
+      stdout = stdout + "*";
+    }
+
+  }
+  stdout = stdout + "\n";
+}
+
+console.log(stdout);
