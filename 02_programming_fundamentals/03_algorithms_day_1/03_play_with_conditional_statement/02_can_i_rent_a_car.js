@@ -17,3 +17,22 @@ const bonus = driverData.bonus;
 let canRentACar;
 
 // Your code here:
+const today = new Date();
+const twoYearsAgo = today.getFullYear() - 2;
+
+//the driver has (at least) a B;
+//driver has been licensed for at least 2 years;
+//he must never have had any accidents or have re-achieved a bonus of 0.7.
+if (driverLicense >= "B" &&
+    licenceIssued <= twoYearsAgo &&
+    (numberOfAccident===0 || bonus >= 0.7 )) {
+  canRentACar = true;
+} else {
+  canRentACar = false;
+}
+
+console.log(driverLicense);
+console.log(licenceIssued);
+console.log(numberOfAccident);
+console.log(bonus);
+console.log(canRentACar);
