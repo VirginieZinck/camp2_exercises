@@ -11,7 +11,7 @@ let stdout = "";
 
 for (let i=0;i<4;i++) {
 
-  for (let j=4;j>i;j--) {
+  for (let j=4;j>i+1;j--) {
     stdout = stdout + " ";
   }
 
@@ -21,12 +21,7 @@ for (let i=0;i<4;i++) {
     stdout=stdout+"*";
   }
 
-  for (let j=4;j>i;j--) {
-    stdout = stdout + " ";
-  }
-
-  stdout = stdout + "\n";
+  console.log(stdout);
+  stdout = "";
 
 }
-
-console.log(stdout);

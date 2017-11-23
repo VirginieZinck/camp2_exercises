@@ -24,11 +24,10 @@ for (let i=0;i<9;i++) {
       stdout = stdout + "0";
     }
     else {
-      stdout = stdout + "*";
+      stdout = stdout + "~";
     }
 
   }
-  stdout = stdout + "\n";
+  console.log(stdout);
+  stdout = "";
 }
-
-console.log(stdout);

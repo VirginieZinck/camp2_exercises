@@ -18,11 +18,9 @@ for (let i=0;i<5;i++) {
   }
 
   for (let k=5;k>i;k--) {
-    stdout=stdout+"*";
+    stdout=stdout + "*";
   }
 
-  stdout = stdout + "\n";
-
+  console.log(stdout);
+  stdout = "";
 }
-
-console.log(stdout);
