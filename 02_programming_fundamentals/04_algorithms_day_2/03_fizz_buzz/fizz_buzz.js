@@ -20,12 +20,12 @@ function fizzBuzz(list) {
     restDivBy3=list[i]%3;
     restDivBy5=list[i]%5;
 
-    if (restDivBy3===0 && restDivBy5!==0) {
-      newValue = "Fizz";
+    if (restDivBy3===0 && restDivBy5===0) {
+      newValue = "FizzBuzz";
     } else if (restDivBy3!==0 && restDivBy5===0) {
       newValue = "Buzz";
-    } else if (restDivBy3===0 && restDivBy5===0) {
-      newValue = "FizzBuzz";
+    } else if (restDivBy3===0 && restDivBy5!==0) {
+      newValue = "Fizz";
     } else {
       newValue = list[i];
     }
