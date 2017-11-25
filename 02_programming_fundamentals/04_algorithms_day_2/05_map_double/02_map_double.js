@@ -10,7 +10,30 @@
 //
 // WARNING: You're not allowed to use `Array.map`!
 
-// Your code here...
+function double(val) {
+  return val*2;
+}
+
+function map(array,fn) {
+
+  let resultArray=[];
+
+  // if (fn!==double) {
+  //   console.log("invalid function passed in parameter");
+  //   return resultArray;
+  // }
+
+  for (let i=0;i<array.length;i++) {
+    resultArray.push(fn(array[i]));
+  }
+
+  return resultArray;
+}
+
+console.log("[0, 1, 2, 3] =>"+map([0, 1, 2, 3],double));
+console.log("[1,4,9] =>"+map([1,4,9],double));
+console.log("[] =>"+map([],double));
+console.log("[] =>"+map([],[].length));
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
