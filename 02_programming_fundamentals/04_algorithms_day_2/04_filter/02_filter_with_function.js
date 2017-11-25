@@ -3,13 +3,11 @@
 
 
 function pickEvenNumbers(value) {
-  let isEven = (value%2 === 0);
-  return isEven;
+  return (value%2 === 0);
 }
 
 function pickOddNumbers(value) {
-  let isOdd = (value%2 !== 0);
-  return isOdd;
+  return (value%2 !== 0);
 }
 
 function filter(array, fn) {
@@ -39,7 +37,7 @@ function filter(array, fn) {
 }
 
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12,13,14,15,16];
-const returnTestArray = filter(testArray,pickEvenNumbers);
+const returnTestArray = filter(testArray,pickOddNumbers);
 console.log(returnTestArray);
 
 // do not remove this line, it is for tests
