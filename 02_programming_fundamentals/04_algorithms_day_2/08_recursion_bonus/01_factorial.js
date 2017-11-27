@@ -9,8 +9,26 @@
 
 
 function fact(n) {
-  // your code here
+  if (n>1 && n%1 ===0) {
+    return n*fact(n-1);
+  } else if (n<0 || isNaN(n) || n%1 !==0) {
+    return null;
+  } else if (n===1) {
+    return 1;
+  } else if (n===0) {
+    return 1;
+  }
+
 }
+
+console.log("fact 5 =>"+fact(5));
+console.log("fact 0 =>"+fact(0));
+console.log("fact -1 =>"+fact(-1));
+console.log("fact 1 =>"+fact(1));
+console.log("fact 3 =>"+fact(3));
+console.log("fact blabla =>"+fact("blabla"));
+console.log('fact 0 =>'+fact('0'));
+console.log("fact 3.14 =>"+fact(3.14));
 
 
 // do not remove this line, it is for tests
