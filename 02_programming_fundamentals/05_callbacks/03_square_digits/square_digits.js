@@ -9,7 +9,22 @@
 
 function squareDigits(number) {
   // Your code here
+  const str = number.toString();
+  let resultStr="";
+  let square;
+
+  for (let i=0;i<str.length;i++) {
+    square = str[i]*str[i];
+    resultStr = resultStr + square.toString();
+  }
+  const result = parseInt(resultStr);
+  return result;
 }
+
+
+console.log("9 => " + squareDigits(9));
+console.log("99 => " + squareDigits(99));
+console.log("9129 => " + squareDigits(9129));
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
