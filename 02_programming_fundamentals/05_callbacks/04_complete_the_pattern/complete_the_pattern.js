@@ -35,7 +35,30 @@
 
 function pattern(size) {
   // Your code here
+
+  let resultStr = "";
+
+  if (size < 1) {
+    return "";
+  }
+
+  for (let i=0;i<size;i++) {
+
+    for (let j=0;j<i+1;j++) {
+      resultStr = resultStr + (i+1).toString();
+    }
+
+    if (i!==size-1) {
+      resultStr = resultStr + "\n";
+    }
+  }
+
+  console.log(resultStr);
+  return resultStr;
 }
+
+pattern(5);
+pattern(11);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
