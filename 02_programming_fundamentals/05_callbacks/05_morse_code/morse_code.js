@@ -46,8 +46,46 @@ const MORSE_CODE = {
 
 function decodeMorse(morse) {
   // Your code here
+
+  let letterInMorse = "";
+  let decodedMsg = "";
+  let isSeparator = [];
+
+  for (let i=0;i<morse.length;i++) {
+
+    isSeparator[i]=false;
+
+    if ((morse[i]===" " && morse[i-1] !== " " && i>1) ||
+        (morse[i]===" " && morse[i-1] === " " && isSeparator[i-1] === false)) {
+      isSeparator[i] = true;
+    }
+
+    if (isSeparator[i]===false) {
+      letterInMorse = letterInMorse + morse[i];
+    }
+
+    if (isSeparator[i]===true || i===morse.length-1) {
+
+      if (letterInMorse.trim()!=="") {
+        decodedMsg = decodedMsg + MORSE_CODE[letterInMorse];
+      } else {
+        decodedMsg = decodedMsg + letterInMorse;
+      }
+      console.log(decodedMsg);
+      letterInMorse="";
+    }
+  }
+
+  console.log(decodedMsg);
+  return decodedMsg;
+  //".... . -.--   .--- ..- -.. .") === "HEY JUDE"
 }
 
+decodeMorse(".... . -.--   .--- ..- -.. .");
+
+decodeMorse("  ");
+
+decodeMorse("....   ");
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
 module.exports = decodeMorse;
