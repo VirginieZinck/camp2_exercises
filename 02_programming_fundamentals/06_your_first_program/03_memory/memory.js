@@ -10,7 +10,7 @@ let returnedCards = ["1","2","3","4","5","6"];
 function mixCards(cards) {
   let randomIndex;
   for (let i=0;i<cards.length;i++) {
-    randomIndex = Math.floor(Math.random()*6);
+    randomIndex = Math.floor(Math.random()*i);
     mixedCards.splice(randomIndex,0,cards[i]);
   }
   console.log(mixedCards);
