@@ -5,8 +5,16 @@
 // for instance pow(2,8) = 256
 
 function pow(number, power) {
-  // Your code here
+  let result = 1;
+
+  for (let i=0; i<power; i++) {
+    result = number*result;
+  }
+  console.log(`pow(${number},${power}) = ${result}`);
+  return result;
 }
+
+pow(2,8);
 
 // do not remove this line, it is for tests
 module.exports = pow;

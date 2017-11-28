@@ -14,26 +14,31 @@
 // Remember that you can call `fibo` inside of itself
 // even several times
 
-function fibo(n) {
+
+function fibo(index) {
   // your code here
 
-  if (n>2 && n%1 ===0) {
-    return fibo(n-1)+fibo(n-2);
-  } else if (n<0 || isNaN(n) || n%1 !==0) {
+  let value;
+  if (index<0 || isNaN(index) || index%1 !==0) {
+    console.log(`Function called with invalid argument ${index}`);
     return null;
-  } else if (n===2) {
-    return 1;
-  } else if (n===1) {
-    return 0;
-  } else if (n===0) {
-    return null;
+  } else {
+    if (index===1) {
+      value = 0;
+    }
+    if (index===2) {
+      value = 1;
+    }
+    if (index>2) {
+      value = fibo(index-1)+fibo(index-2);
+    }
+    return value;
   }
-  let result = fibo(n-1)+fibo(n-2)
+}
+
+for (let i = 0; i<30;i++) {
+  console.log(`fibo ${i} => ${fibo(i)}`);
 }
 
 // do not remove this line, it is for tests
 module.exports = fibo;
-
-console.log("fibo 5 => 3" + fibo(5)); //0,1,1,2,3 =>3
-console.log("fibo 4 => 2" + fibo(4)); //0,1,1,2 => 2
-console.log("fibo 3 => 1" + fibo(4)); //0,1,1 => 1
