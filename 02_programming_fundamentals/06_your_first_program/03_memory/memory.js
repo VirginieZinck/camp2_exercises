@@ -3,15 +3,8 @@ const clear = require("cli-clear");
 const readline = require("readline");
 
 const cards = ["🌲","🐰", "🎃", "🎃", "🐰", "🌲"];
-let returnedCards = ["1","2","3","4","5","6"];
-
-let firstCard;
-let firstIndex;
-let secondCard;
-let secondIndex;
-
 let mixedCards = [];
-
+let returnedCards = ["1","2","3","4","5","6"];
 
 
 function mixCards(cards) {
@@ -24,13 +17,17 @@ function mixCards(cards) {
 }
 
 
-
 const reader = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
 function newTry() {
+
+  let firstCard;
+  let firstIndex;
+  let secondCard;
+  let secondIndex;
 
   clear();
   console.log(returnedCards);
