@@ -17,14 +17,18 @@ const orangeTree = {
     } else {
       return false;
     }
-
   },
 
   ageOneYear: function() {
 
     // the Orange Tree should age each year
-    this.age=this.age+1;
+    if (this.alive===false) {
+      console.log(`Tree already dead at age ${this.age}`);
+      return false;
 
+    } else {
+      this.age=this.age+1;
+    }
 
     // it should grow each year:
     // 25 centimeters until it is 10 years old
@@ -67,7 +71,7 @@ const orangeTree = {
         this.alive=false;
       }
     }
-
+    return true;
   },
 
   // When we seed an orangeTree, it resets all its attributes
@@ -81,9 +85,3 @@ const orangeTree = {
 
 
 module.exports = orangeTree;
-
-orangeTree.seed();
-
-for (let i=0;i<101;i++) {
-  orangeTree.ageOneYear();
-};
