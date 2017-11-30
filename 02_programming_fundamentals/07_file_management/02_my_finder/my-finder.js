@@ -17,7 +17,6 @@ function displayList(path) {
 
     if (fs.statSync(path+"/"+fileName).isDirectory()) {
       fileObject = {
-        index:unformattedList.indexOf(fileName),
         filePath:path,
         file:`${fileName}/`,
         type:"Directory"
@@ -26,7 +25,6 @@ function displayList(path) {
 
     } else if (fs.statSync(path+"/"+fileName).isFile()) {
       fileObject = {
-        index:unformattedList.indexOf(fileName),
         filePath:path,
         file:fileName,
         type:"File"
@@ -37,7 +35,7 @@ function displayList(path) {
 
   //display formatted list of files or Directory
   for (let i=0;i<formattedList.length;i++) {
-    console.log(`${formattedList[i].index}. ${formattedList[i].file}`);
+    console.log(`${i}. ${formattedList[i].file}`);
   }
 }
 
@@ -68,7 +66,6 @@ function askQuestion(path) {
           askQuestion(path);
 
         } else {
-
           //number found & it is a Directory
           newPath = `${formattedList[i].filePath}/${formattedList[i].file}`
           askQuestion(newPath);
