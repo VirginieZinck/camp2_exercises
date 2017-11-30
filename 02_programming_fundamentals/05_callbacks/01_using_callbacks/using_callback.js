@@ -8,4 +8,25 @@ function sayHello(player) {
   console.log("Hello, "+player.name);
 }
 
+function displayStrength(player) {
+  console.log(`Hello, ${player.name}, your strength is ${player.strength}`);
+}
+
+function changeStrength(player) {
+  player.strength=player.strength+10;
+  console.log(`Hello, ${player.name}, your strength is ${player.strength}`);
+}
+
+
 thisIsThePlayer(sayHello);
+thisIsThePlayer(displayStrength);
+thisIsThePlayer(changeStrength);
+
+const myArray = [1,2,3];
+
+function functionX2(value) {
+  return value*2;
+}
+
+const myNewArray=myArray.map(functionX2);
+console.log(myNewArray);
