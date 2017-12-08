@@ -27,10 +27,9 @@ function convertAddressInLocation(address) {
 
 function fetchLocationByAddress(address,callback) {
 
-  request(
+  request.get(
     {
       url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GOOGLE_PLACES_API_KEY}`,
-      method: "GET",
       headers: {
         "Accept": "application/json"
       }
