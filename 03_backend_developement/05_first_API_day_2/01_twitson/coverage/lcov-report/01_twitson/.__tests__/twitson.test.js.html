@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for 01_twitson/.__tests__/twitson.test.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">01_twitson/.__tests__</a> twitson.test.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const twitson = require("../twitson");
+&nbsp;
+const twitArray=[
+  { created_at: 'Fri Dec 08 14:01:30 +0000 2017',
+    id: 939132835851653100,
+    id_str: '939132835851653120',
+    text: 'A "Texas Christmas miracle"\n\nSnow in south Texas? Yes, you read that right https://t.co/TYwXKV20Xh \n\nIt\'s snowing a… https://t.co/FXm3d5LXiG',
+    truncated: true,
+    entities: { hashtags: [], symbols: [], user_mentions: [], urls: [Array] },
+    source: '&lt;a href="http://www.socialflow.com" rel="nofollow"&gt;SocialFlow&lt;/a&gt;',
+    in_reply_to_status_id: null,
+    in_reply_to_status_id_str: null,
+    in_reply_to_user_id: null,
+    in_reply_to_user_id_str: null,
+    in_reply_to_screen_name: null,
+    user:
+     { id: 759251,
+       id_str: '759251',
+       name: 'CNN',
+       screen_name: 'CNN',
+       location: '',
+       description: 'It’s our job to #GoThere &amp; tell the most difficult stories. Join us! For more breaking news updates follow @CNNBRK  &amp; Download our app 📲https://t.co/Xgo5kjIt8c',
+       url: 'http://t.co/IaghNW8Xm2',
+       entities: [Object],
+       protected: false,
+       followers_count: 38688548,
+       friends_count: 1116,
+       listed_count: 130218,
+       created_at: 'Fri Feb 09 00:35:02 +0000 2007',
+       favourites_count: 1470,
+       utc_offset: -18000,
+       time_zone: 'Eastern Time (US &amp; Canada)',
+       geo_enabled: true,
+       verified: true,
+       statuses_count: 160002,
+       lang: 'en',
+       contributors_enabled: false,
+       is_translator: false,
+       is_translation_enabled: true,
+       profile_background_color: '323232',
+       profile_background_image_url: 'http://pbs.twimg.com/profile_background_images/515228058286952449/zVfUxqPl.jpeg',
+       profile_background_image_url_https: 'https://pbs.twimg.com/profile_background_images/515228058286952449/zVfUxqPl.jpeg',
+       profile_background_tile: false,
+       profile_image_url: 'http://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_normal.png',
+       profile_image_url_https: 'https://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_normal.png',
+       profile_banner_url: 'https://pbs.twimg.com/profile_banners/759251/1508752874',
+       profile_link_color: '004287',
+       profile_sidebar_border_color: '000000',
+       profile_sidebar_fill_color: 'EEEEEE',
+       profile_text_color: '000000',
+       profile_use_background_image: false,
+       has_extended_profile: false,
+       default_profile: false,
+       default_profile_image: false,
+       following: false,
+       follow_request_sent: false,
+       notifications: false,
+       translator_type: 'regular' },
+    geo: null,
+    coordinates: null,
+    place: null,
+    contributors: null,
+    is_quote_status: false,
+    retweet_count: 87,
+    favorite_count: 159,
+    favorited: false,
+    retweeted: false,
+    possibly_sensitive: false,
+    lang: 'en' },
+  { created_at: 'Fri Dec 08 13:49:07 +0000 2017',
+    id: 939129718519095300,
+    id_str: '939129718519095296',
+    text: 'Anheuser-Busch is getting Tesla\'s trucking party started with an order for 40 of its new electric semi-trucks… https://t.co/S5hcwCFpNy',
+    truncated: true,
+    entities: { hashtags: [], symbols: [], user_mentions: [], urls: [Array] },
+    source: '&lt;a href="http://www.socialflow.com" rel="nofollow"&gt;SocialFlow&lt;/a&gt;',
+    in_reply_to_status_id: null,
+    in_reply_to_status_id_str: null,
+    in_reply_to_user_id: null,
+    in_reply_to_user_id_str: null,
+    in_reply_to_screen_name: null,
+    user:
+     { id: 759251,
+       id_str: '759251',
+       name: 'CNN',
+       screen_name: 'CNN',
+       location: '',
+       description: 'It’s our job to #GoThere &amp; tell the most difficult stories. Join us! For more breaking news updates follow @CNNBRK  &amp; Download our app 📲https://t.co/Xgo5kjIt8c',
+       url: 'http://t.co/IaghNW8Xm2',
+       entities: [Object],
+       protected: false,
+       followers_count: 38688548,
+       friends_count: 1116,
+       listed_count: 130218,
+       created_at: 'Fri Feb 09 00:35:02 +0000 2007',
+       favourites_count: 1470,
+       utc_offset: -18000,
+       time_zone: 'Eastern Time (US &amp; Canada)',
+       geo_enabled: true,
+       verified: true,
+       statuses_count: 160002,
+       lang: 'en',
+       contributors_enabled: false,
+       is_translator: false,
+       is_translation_enabled: true,
+       profile_background_color: '323232',
+       profile_background_image_url: 'http://pbs.twimg.com/profile_background_images/515228058286952449/zVfUxqPl.jpeg',
+       profile_background_image_url_https: 'https://pbs.twimg.com/profile_background_images/515228058286952449/zVfUxqPl.jpeg',
+       profile_background_tile: false,
+       profile_image_url: 'http://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_normal.png',
+       profile_image_url_https: 'https://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_normal.png',
+       profile_banner_url: 'https://pbs.twimg.com/profile_banners/759251/1508752874',
+       profile_link_color: '004287',
+       profile_sidebar_border_color: '000000',
+       profile_sidebar_fill_color: 'EEEEEE',
+       profile_text_color: '000000',
+       profile_use_background_image: false,
+       has_extended_profile: false,
+       default_profile: false,
+       default_profile_image: false,
+       following: false,
+       follow_request_sent: false,
+       notifications: false,
+       translator_type: 'regular' },
+    geo: null,
+    coordinates: null,
+    place: null,
+    contributors: null,
+    is_quote_status: false,
+    retweet_count: 130,
+    favorite_count: 311,
+    favorited: false,
+    retweeted: false,
+    possibly_sensitive: false,
+    lang: 'en' }]
+&nbsp;
+const TweetsString = twitArray[0].text+twitArray[1].text;
+&nbsp;
+const WatsonResponse = `{
+  "usage": {
+    "text_units": 1,
+    "text_characters": 373,
+    "features": 1
+  },
+  "language": "en",
+  "emotion": {
+    "document": {
+      "emotion": {
+        "sadness": 0.49725,
+        "joy": 0.07611,
+        "fear": 0.342978,
+        "disgust": 0.092521,
+        "anger": 0.171947
+      }
+    }
+  }
+}`;
+&nbsp;
+const watsonOutput = "sadness : 50%\njoy     : 8%\nfear    : 34%\ndisgust : 9%\nanger   : 17%\n";
+&nbsp;
+&nbsp;
+test("It shoud convert tweets texts into a unique string", function() {
+  const result = twitson.convertTweetsInOneString(twitArray);
+  expect(result).toBe(TweetsString);
+});
+&nbsp;
+test("it should fetch last tweets from a user", () =&gt; {
+  const logSpy = jest.spyOn(twitson.TwitterOAuth, 'get').mockImplementation();
+&nbsp;
+  twitson.fetchTweetsFromUser("CNN");
+&nbsp;
+  expect(logSpy).toHaveBeenCalledTimes(1);
+  expect(logSpy).toHaveBeenCalledWith(
+    "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=CNN",
+    process.env.TWITTER_ACCESS_TOKEN,
+    process.env.TWITTER_ACCESS_SECRET,
+    twitson.processTwitterAPIResult);
+  logSpy.mockRestore()
+});
+&nbsp;
+test("it should fetch sentiments from a text", () =&gt; {
+  const logSpy = jest.spyOn(twitson.request, "get").mockImplementation();
+  twitson.fetchSentimentsForString("hey man, you are the best!");
+  expect(logSpy).toHaveBeenCalledTimes(1);
+  logSpy.mockRestore()
+});
+&nbsp;
+&nbsp;
+test("It shoud format Watson output nicely", function() {
+  const result = twitson.processWatsonAPIResult(null,null,WatsonResponse);
+  expect(result).toBe(watsonOutput);
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 08 2017 18:00:16 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1512752416666" clover="3.2.0">
+  <project timestamp="1512752416666" name="All files">
+    <metrics statements="52" coveredstatements="45" conditionals="4" coveredconditionals="1" methods="10" coveredmethods="9" elements="66" coveredelements="55" complexity="0" loc="52" ncloc="52" packages="2" files="2" classes="2">
+      <package name="01_twitson">
+        <metrics statements="30" coveredstatements="23" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="5"/>
+        <file name="twitson.js" path="/Users/Virginie/Workspace/camp2_exercises/03_backend_developement/05_first_API_day_2/01_twitson/twitson.js">
+          <metrics statements="30" coveredstatements="23" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="5"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="23" count="2" type="stmt"/>
+          <line num="24" count="2" type="stmt"/>
+          <line num="25" count="2" type="stmt"/>
+          <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="46" count="2" type="stmt"/>
+          <line num="47" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="54" count="1" type="stmt"/>
+          <line num="65" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="68" count="1" type="stmt"/>
+          <line num="69" count="1" type="stmt"/>
+          <line num="74" count="1" type="stmt"/>
+          <line num="75" count="1" type="stmt"/>
+          <line num="79" count="1" type="stmt"/>
+          <line num="81" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="01_twitson..__tests__">
+        <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <file name="twitson.test.js" path="/Users/Virginie/Workspace/camp2_exercises/03_backend_developement/05_first_API_day_2/01_twitson/.__tests__/twitson.test.js">
+          <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="137" count="1" type="stmt"/>
+          <line num="139" count="1" type="stmt"/>
+          <line num="159" count="1" type="stmt"/>
+          <line num="162" count="1" type="stmt"/>
+          <line num="163" count="1" type="stmt"/>
+          <line num="164" count="1" type="stmt"/>
+          <line num="167" count="1" type="stmt"/>
+          <line num="168" count="1" type="stmt"/>
+          <line num="170" count="1" type="stmt"/>
+          <line num="172" count="1" type="stmt"/>
+          <line num="173" count="1" type="stmt"/>
+          <line num="178" count="1" type="stmt"/>
+          <line num="181" count="1" type="stmt"/>
+          <line num="182" count="1" type="stmt"/>
+          <line num="183" count="1" type="stmt"/>
+          <line num="184" count="1" type="stmt"/>
+          <line num="185" count="1" type="stmt"/>
+          <line num="189" count="1" type="stmt"/>
+          <line num="190" count="1" type="stmt"/>
+          <line num="191" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

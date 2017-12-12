@@ -3,3 +3,4 @@ node_modules
 *.weather
 gameLog.json
 /*.result
+env_vars.dev
