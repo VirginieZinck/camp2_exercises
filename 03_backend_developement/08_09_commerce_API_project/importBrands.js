@@ -80,6 +80,9 @@ function insertBrands(client, done, brands) {
 fetchBrands(importBrands);
 
 
-// id: 'cbed3205-8a13-4f6d-a5d5-32c764eae9d3',
-//    decathlon_id: 313366,
-//    label: 'Protections et casques roller' }
+
+module.exports = {
+  fetchBrands: fetchBrands,
+  importBrands:importBrands,
+  deleteBrands:deleteBrands
+};

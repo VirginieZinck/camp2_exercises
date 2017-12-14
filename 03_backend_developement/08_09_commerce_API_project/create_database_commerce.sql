@@ -29,6 +29,8 @@ rating          float
 );
 
 create table products_by_category (
-products_id     uuid 		PRIMARY KEY REFERENCES products(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-category_id     uuid        REFERENCES products(id) ON DELETE RESTRICT ON UPDATE RESTRICT
+product_id     uuid 		REFERENCES products(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+category_id     uuid        REFERENCES categories(id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
+
+drop table products_by_category;

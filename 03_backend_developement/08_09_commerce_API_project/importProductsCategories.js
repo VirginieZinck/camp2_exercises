@@ -1,13 +1,43 @@
 const request = require("request");
-//const { Pool } = require("pg");
-//const pool = new Pool();
+const { Pool } = require("pg");
+const pool = new Pool();
 
+let countCategories=0;
+
+
+function importProductsCategories(callback) {
+  pool.connect(
+    (err, client, done) => {
+      if (err) {
+        done();
+        return console.error("Error acquiring client", err.stack);
+      } else {
+        callback(client, done, fetchCategories);
+      }
+    }
+  );
+}
+
+function deleteProductsCategories(client, done, callback) {
+  //delete from table
+  client.query(
+    "DELETE FROM products_by_category;",
+    [],
+    function(errorDB) {
+      if (errorDB) {
+        console.warn(errorDB);
+      } else {
+        callback(client, done);
+      }
+    }
+  );
+}
 
 //Fetch products
-function fetchProductsForOneCategory (category, callback) {
+function fetchCategories (client, done) {
   request(
     {
-      url: `https://decath-product-api.herokuapp.com/categories/${category.id}/products`,
+      url: "https://decath-product-api.herokuapp.com/categories",
       method: "GET"
     },
     function(errorAPI, responseAPI, resultAPI) {
@@ -16,92 +46,86 @@ function fetchProductsForOneCategory (category, callback) {
         console.log("error:", errorAPI); // Print the error if one occurred
       } else {
 
-        const productsForOneCategory = JSON.parse(resultAPI);
-        console.log(`Nb of products fetched for category ${category.label}: ${productsForOneCategory.length}`);
-        callback(category, productsForOneCategory);
+        const categories = JSON.parse(resultAPI);
+        const totalCategories = categories.length;
+
+        let batchCount=0;
+        for (let i=0;i<totalCategories;i++) {
+          if (i%100===0) {
+            batchCount++;
+          }
+          setTimeout(
+            function () {
+              fetchProductsByCategory(client, done, categories[i], totalCategories, insertProductsByCategory);
+            },
+            batchCount*1000
+          );
+        }
       }
     }
   );
 }
 
+//Fetch products
+function fetchProductsByCategory (client, done, category, totalCategories, callback) {
+  request(
+    {
+      url: `https://decath-product-api.herokuapp.com/categories/${category.id}/products`,
+      method: "GET"
+    },
+    function(errorAPI, responseAPI, resultAPI) {
 
-// create table products_by_category (
-// products_id     uuid 		PRIMARY KEY REFERENCES products(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-// category_id     uuid        REFERENCES products(id) ON DELETE RESTRICT ON UPDATE RESTRICT
-// )
+      if (errorAPI) {
+        console.log("Error in function fetchProductsByCategory:", errorAPI); // Print the error if one occurred
+      } else {
+        const productsByCategory = JSON.parse(resultAPI);
+
+        if (productsByCategory.length===0) {
+          countCategories++;
+          console.log("No products categories for this category :"+category.label);
+        } else {
+          callback(client, done, category, totalCategories, productsByCategory);
+        }
+      }
+    }
+  );
+}
+
+function insertProductsByCategory (client, done, category, totalCategories, productsByCategory) {
+
+  let nbOfInserts=0;
+  productsByCategory.map( product => {
+    return client.query(
+      "INSERT INTO products_by_category (product_id, category_id) VALUES ($1::uuid,$2::uuid);",[
+        product.id,
+        category.id
+      ],
+      function(errorDB) {
+        if (errorDB) {
+          console.warn("Error in function insertProductsByCategory : "+errorDB+" =>>product:" + product);
+        } else {
+          //console.log(resultDB);
+          nbOfInserts++;
+          if (nbOfInserts===productsByCategory.length) {
+            countCategories++;
+            console.log(countCategories+ "-- Products Category : "+category.label+" => nbOfInserts: "+nbOfInserts);
+            if (countCategories ===totalCategories) {
+              console.log("Import done : Nb of Categories imported : "+countCategories);
+              done();
+            }
+          }
+        }
+      }
+    );
+  });
+}
 
 
-//
-// function importProducts(products) {
-//   pool.connect(
-//     (err, client, done) => {
-//       if (err) {
-//         done();
-//         return console.error("Error acquiring client", err.stack);
-//       } else {
-//         deleteProducts(client, done, products, insertProducts);
-//       }
-//     }
-//   );
-// }
-//
-// function deleteProducts(client, done, products, callback) {
-//   //delete from table
-//   client.query(
-//     "DELETE FROM products;",
-//     [],
-//     function(errorDB) {
-//       if (errorDB) {
-//         console.warn(errorDB);
-//       } else {
-//         callback(client, done, products);
-//       }
-//     }
-//   );
-// }
-//
-//
-// function insertProducts(client, done, products) {
-//
-//   let nbOfInserts=0;
-//   products.map( product =>
-//     client.query(
-//       "INSERT INTO products VALUES ($1::uuid,$2::integer,$3::text,$4::text,$5::uuid,$6::float,$7::float,$8::float,$9::float,$10::text,$11::float);",[
-//         product.id,
-//         product.decathlon_id,
-//         product.title,
-//         product.description,
-//         product.brand_id,
-//         product.min_price ,
-//         product.max_price,
-//         product.crossed_price,
-//         product.percent_reduction,
-//         product.image_path,
-//         product.rating
-//       ],
-//       function(errorDB) {
-//         if (errorDB) {
-//           console.warn(errorDB);
-//         } else {
-//           //console.log(resultDB);
-//           nbOfInserts++;
-//           if (nbOfInserts===products.length) {
-//             console.log("Products import done : nbOfInserts: "+nbOfInserts);
-//             done();
-//           }
-//         }
-//       }
-//     )
-//   );
-// }
 
-const category = {
-  id:"00024d84-ed1f-408f-96f1-2c839d03064a",
-  decathlon_id: 590616,
-  label : "Appâts, amorces, accessoires"
-};
+importProductsCategories(deleteProductsCategories);
 
-fetchProductsForOneCategory(category,console.log);
+
+//fetchProductsByCategory(category,console.log);
 //fetchProducts(importProducts);
 
 
