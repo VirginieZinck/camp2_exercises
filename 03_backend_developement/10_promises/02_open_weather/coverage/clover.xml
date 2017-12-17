@@ -1,40 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1513350210666" clover="3.2.0">
-  <project timestamp="1513350210666" name="All files">
-    <metrics statements="23" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5" elements="29" coveredelements="26" complexity="0" loc="23" ncloc="23" packages="2" files="2" classes="2">
+<coverage generated="1513421880654" clover="3.2.0">
+  <project timestamp="1513421880654" name="All files">
+    <metrics statements="61" coveredstatements="61" conditionals="4" coveredconditionals="4" methods="24" coveredmethods="24" elements="89" coveredelements="89" complexity="0" loc="61" ncloc="61" packages="2" files="2" classes="2">
       <package name="02_open_weather">
-        <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <metrics statements="29" coveredstatements="29" conditionals="4" coveredconditionals="4" methods="14" coveredmethods="14"/>
         <file name="open_weather.js" path="/Users/Virginie/Workspace/camp2_exercises/03_backend_developement/10_promises/02_open_weather/open_weather.js">
-          <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="8" count="4" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
+          <metrics statements="29" coveredstatements="29" conditionals="4" coveredconditionals="4" methods="14" coveredmethods="14"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="18" count="1" type="stmt"/>
           <line num="19" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="34" count="2" type="stmt"/>
+          <line num="41" count="2" type="stmt"/>
+          <line num="42" count="2" type="stmt"/>
+          <line num="45" count="40" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+          <line num="49" count="1" type="stmt"/>
+          <line num="52" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="60" count="40" type="stmt"/>
+          <line num="73" count="42" type="stmt"/>
+          <line num="74" count="42" type="stmt"/>
+          <line num="75" count="42" type="stmt"/>
+          <line num="79" count="42" type="cond" truecount="2" falsecount="0"/>
+          <line num="80" count="41" type="stmt"/>
+          <line num="82" count="1" type="stmt"/>
+          <line num="87" count="42" type="cond" truecount="2" falsecount="0"/>
+          <line num="88" count="16" type="stmt"/>
+          <line num="90" count="26" type="stmt"/>
+          <line num="93" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="02_open_weather..__tests__">
+        <metrics statements="32" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+        <file name="open_weather.test.js" path="/Users/Virginie/Workspace/camp2_exercises/03_backend_developement/10_promises/02_open_weather/.__tests__/open_weather.test.js">
+          <metrics statements="32" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
           <line num="20" count="1" type="stmt"/>
           <line num="21" count="1" type="stmt"/>
-          <line num="24" count="0" type="stmt"/>
-          <line num="25" count="0" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
           <line num="29" count="1" type="stmt"/>
           <line num="30" count="1" type="stmt"/>
           <line num="31" count="1" type="stmt"/>
           <line num="33" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="02_open_weather..__tests__">
-        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <file name="open_weather.test.js" path="/Users/Virginie/Workspace/camp2_exercises/03_backend_developement/10_promises/02_open_weather/.__tests__/open_weather.test.js">
-          <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="12" count="1" type="stmt"/>
-          <line num="13" count="1" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="38" count="1" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="40" count="1" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+          <line num="43" count="1" type="stmt"/>
+          <line num="47" count="1" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+          <line num="49" count="1" type="stmt"/>
+          <line num="50" count="1" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
+          <line num="56" count="1" type="stmt"/>
+          <line num="57" count="1" type="stmt"/>
+          <line num="58" count="1" type="stmt"/>
+          <line num="59" count="1" type="stmt"/>
+          <line num="60" count="1" type="stmt"/>
         </file>
       </package>
     </metrics>
