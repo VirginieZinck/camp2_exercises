@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>32/32</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>32/32</span>
       </div>
     </div>
   </div>
@@ -70,35 +70,102 @@
 25
 26
 27
-28</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const open_weather = require("../open_weather");
-const API_KEY = process.env.OPENWEATHER_API_KEY;
 require("sepia");
 &nbsp;
 // 1. Let's get a product with its id: efe288cb-fb63-4b23-b8df-529f04b8b02b.
@@ -111,26 +178,61 @@ test("it should fetch the temp of a given city", (done) =&gt; {
   const city = "London";
   return open_weather.weatherByCityName(city)
     .then (weatherTemp =&gt; {
-      expect(weatherTemp).toEqual("-7 °C");
+      expect(weatherTemp).toEqual("4.81 °C");
       done();
     });
 });
 &nbsp;
 &nbsp;
-// test("it should handle errors when fetching a product or its brand", () =&gt; {
-//   const productId = "123/id";
-//   return fetch_dkt_api.fetchProductAndBrand(productId)
-//     .then (error =&gt; {
-//       expect(error.name).toEqual("FetchError");
-//     });
-// });
+test("it should handle errors when fetching a product or its brand", () =&gt; {
+  const city = "123/London";
+  return open_weather.weatherByCityName(city)
+    .then (error =&gt; {
+      expect(error.name).toEqual("TypeError");
+    });
+});
+&nbsp;
+&nbsp;
+test("it should fetch the weather for the correct city when given location", (done) =&gt; {
+  expect.assertions(1);
+  return open_weather.weatherByLatitudeAndLongitude("32.661343","51.680374")
+    .then (weatherList =&gt; {
+      expect(weatherList[0].city).toEqual("Esfahan");
+      done();
+    });
+});
+&nbsp;
+test("it should handle errors when given incorrect location", (done) =&gt; {
+  expect.assertions(1);
+  return open_weather.weatherByLatitudeAndLongitude("abc","abc")
+    .then (error =&gt; {
+      expect(error.name).toEqual("TypeError");
+      done();
+    });
+});
+&nbsp;
+test("it should format date correctly", (done) =&gt; {
+  expect.assertions(1);
+  const formattedDate = open_weather.timestampToDate(1513825200);
+  expect(formattedDate).toEqual("21/12/2017 - 04:00");
+  done();
+});
+&nbsp;
+&nbsp;
+&nbsp;
+test("it should format date correctly", (done) =&gt; {
+  expect.assertions(1);
+  const formattedDate = open_weather.timestampToDate(1514825200);
+  expect(formattedDate).toEqual("1/1/2018 - 17:46");
+  done();
+});
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 15 2017 16:03:30 GMT+0100 (CET)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 16 2017 11:58:00 GMT+0100 (CET)
 </div>
 </div>
 <script src="../../prettify.js"></script>
