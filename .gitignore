@@ -4,4 +4,4 @@ node_modules
 gameLog.json
 /*.result
 env_vars.dev
-*/fixtures/*
+*/fixtures*
