@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>My CSS page</title>
+    <style>
+      tr:nth-child(even) {background: #222;}
+      tr:nth-child(odd) {background: #CCC;}
+      .important {font-weight: bold;}
+      .emphasis  {font-style: italic;}
+      .important.emphasis {background-color: red;}
+      td {padding: 1%;}
+      .button {
+        width: 20%;
+        padding: 2%;
+        margin: auto;
+        background-color: #aaaaaa;
+        display: block;
+        position: relative;
+        border-radius: 3px;
+        box-shadow:
+          1px 0px 1px black,
+          0px 1px 1px black,
+          2px 1px 1px black,
+          1px 2px 1px black,
+          3px 2px 1px black,
+          2px 3px 1px black,
+          4px 3px 1px black,
+          3px 4px 1px black,
+          5px 4px 1px black,
+          4px 5px 1px black,
+          6px 5px 1px black;
+      }
+      .button:hover {
+        background: #cccccc;
+        width: 21%;
+      }
+      .button:active {
+        box-shadow:
+          1px 0px 1px black,
+          0px 1px 1px black,
+          2px 1px 1px black,
+          1px 2px 1px black,
+          3px 2px 1px black;
+        transform: translate(3px, 3px);
+      }
+     </style>
+  </head>
+  <body>
+    <h1>My three favorites animals</h1>
+    <!--add a new table
+    change the background color every two lines with CSS-->
+    <table>
+      <tr>
+        <td width="30%" >La Stomatopoda</td>
+        <td width="30%" >Le dragon bleu</td>
+        <td width="30%" >La fourmi panda</td>
+      </tr>
+      <tr>
+        <td>
+          <img width="100%" src="./img/mantis-shrimp.jpg">
+        </td>
+        <td>
+          <img width="100%"src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Blue_dragon-glaucus_atlanticus_%288599051974%29.jpg/1920px-Blue_dragon-glaucus_atlanticus_%288599051974%29.jpg">
+        </td>
+        <td>
+          <img width="100%"src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Hormiga_panda.png">
+        </td>
+      </tr>
+      <tr>
+        <td>Lorem Ipsum</td>
+        <td>Lorem Ipsum</td>
+        <td>Lorem Ipsum</td>
+      </tr>
+    </table>
+    <!--add a new paragraph (time to google "Lorem Ipsum")
+    check the documentation of the span tag.
+    create two css classes:
+    important: bold the text
+    emphasis: italic the text
+    When those two classes are used in same time, the text must be bold, emphased and red. -->
+    <p>
+      <span class="emphasis" >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      </span>
+      <span class="important">
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+      </span>
+      <span class="important emphasis" >
+        officia deserunt mollit anim id est laborum.
+      </span>
+    </p>
+    <!-- create a new button
+    create a new CSS classes applied to the button
+    the button should be bigger when we move the arrow above it
+    the button should show a "push" effect when we click on it
+    BONUS: find how to add shadow on the border of the button -->
+    <div>
+  	  <button class="button">What to know more ?</button>
+  	</div>
+  </body>
+</html>
