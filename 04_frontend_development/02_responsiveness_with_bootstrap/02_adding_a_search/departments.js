@@ -109,6 +109,19 @@ function displayDepartments(departments) {
   }).join("")
 }
 
+function displaySearchedDepartments(departments) {
+  // each time something is typed into the search input
+  // it will call this function and display the departments which name includes the string typed
+  const mySearchInput = document.querySelector("#search-department");
+
+  mySearchInput.addEventListener("input", function() {
+    const searchString = mySearchInput.value.toUpperCase();
+
+    const filteredDepartments = DEPARTMENTS.filter(department => department.includes(searchString));
+    displayDepartments(filteredDepartments);
+  });
+}
+
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = DEPARTMENTS;
 }

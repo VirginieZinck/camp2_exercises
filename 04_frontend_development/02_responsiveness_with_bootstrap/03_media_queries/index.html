@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pokemon resize page</title>
+    <style>
+      .pokemon {
+        width: 900px;
+        height: 900px;
+        /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e0/Hormiga_panda.png"); */
+        background-image: url("charizard.png");
+        background-repeat: no-repeat;
+      }
+      /* This pokemon evolves in that order: Charmander, Charmeleon, Charizard. */
+      @media (max-width: 700px) {
+        .pokemon {
+          background-image: url("charmeleon.png");
+        }
+       }
+      @media (max-width: 500px) {
+        .pokemon {
+          background-image: url("charmander.png");
+        }
+       }
+    </style>
+  </head>
+  <body>
+    <div class="pokemon"> POKEMON </div>
+  </body>
+</html>

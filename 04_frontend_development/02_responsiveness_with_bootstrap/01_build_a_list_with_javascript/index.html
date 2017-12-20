@@ -1,3 +1,12 @@
+<!-- Context and Objectives
+JavaScript and DOM are linked and can communicate between each other.
+You can move data from JavaScript to the DOM and display datasets.
+Specs
+Using the HTML template given, transform the DEPARTMENTS array into a list inside the <ul> with the ID department-list.
+You will need document.querySelector(selector) which allows you to get an HTML node
+from it identifier (the same identifier as CSS).
+And you can use node.innerHTML = htmlText to update the content of an element. -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,6 +36,10 @@
     </div>
     <script src="./departments.js"></script>
     <script>
+      const nodeDepartmentList = document.getElementById("department-list");
+      console.log(DEPARTMENTS);
+      const htmlText = DEPARTMENTS.map(department => `<li>${department}</li>`).join("");
+      nodeDepartmentList.innerHTML = htmlText;
       // Your code here
       // the departments are accessible in a global variable named DEPARTMENTS
     </script>
