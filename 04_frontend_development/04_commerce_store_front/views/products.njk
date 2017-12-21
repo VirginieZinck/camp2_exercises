@@ -2,9 +2,21 @@
 
 {% block content %}
   <div class = "container-fluid offset-2 col-8">
-    <div class="row">
-      <h1> Products </h1>
+    <div class="row pb-2">
+      <h1>{{ category.label }}</h1>
     </div>
+    <div class="dropdown  pb-2">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categories
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for cat in categories %}
+          <a class="dropdown-item" href="http://localhost:3000/categories/{{ cat.id }}">{{cat.label}}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+
     <div class="row mx-5 pb-5">
       {% for item in products %}
           <div class="card border col-4">

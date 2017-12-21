@@ -33,9 +33,9 @@ function fetchCategories() {
     });
 }
 
-function fetchProductsByCategory(category) {
+function fetchProductsByCategory(categoryId) {
   return fetch(
-    `https://decath-product-api.herokuapp.com/categories/${category.id}/products`,
+    `https://decath-product-api.herokuapp.com/categories/${categoryId}/products`,
     {
       method: "GET"
     })
@@ -46,9 +46,6 @@ function fetchProductsByCategory(category) {
       console.log(products[0]);
       return products;
     })
-//     .then((products) => {
-//       return products.map(product => product.categoryId=category.id);
-//     })
     .catch((error) => {
       console.warn(error);
       return error;
@@ -97,13 +94,20 @@ app.get("/categories", function(request, result) {
 app.get("/categories/:categoryId", function(request, result) {
   const categoryId = request.params.categoryId;
 
-  return fetchCategory(categoryId)
-    .then((category) => {
-      return fetchProductsByCategory(category)
+  Promise.all(
+      [
+        fetchCategory(categoryId),
+        fetchCategories(),
+        fetchProductsByCategory(categoryId)
+      ]
+    )
+    .then(function(promiseAllResult) {
+        result.render("products", {
+          category : promiseAllResult[0],
+          categories : promiseAllResult[1],
+          products : promiseAllResult[2]
+        })
     })
-    .then((products) => {
-      result.render("products", {products:products});
-    });
 });
 
 app.get("/products/:productId", function(request, result) {
