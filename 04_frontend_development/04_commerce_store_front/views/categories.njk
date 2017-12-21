@@ -1,0 +1,15 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div>
+    <div class="list-group col-4 offset-4 pt-5">
+      <span class="list-group-item active"> Categories </span>
+
+      {% for item in categories %}
+        <a href="http://localhost:3000/categories/{{ item.id }}" class="list-group-item list-group-item-action">{{ item.label }}</a>
+      {% else %}
+        <span class="list-group-item list-group-item-action">categories empty</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

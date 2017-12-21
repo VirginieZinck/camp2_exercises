@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class = "container-fluid offset-2 col-8">
+    <div class="row">
+      <h1> Products </h1>
+    </div>
+    <div class="row mx-5 pb-5">
+      {% for item in products %}
+          <div class="card border col-4">
+            <div class="embed-responsive embed-responsive-1by1">
+              <img class="embed-responsive-item card-img-top"
+                src="https://www.decathlon.fr/media/{{ item.image_path }}"/>
+            </div>
+            <div class="card-body border">
+                 <a href="http://localhost:3000/products/{{ item.id }}" class="card-link">{{ item.title }}</a>
+            </div>
+        </div>
+      {% else %}
+        <span>category empty</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+
+   .jauge {
+     width:160px;
+     height:32px;
+     background-image: url("/star_black.png");
+   }
+
+  .jauge > div {
+     background-image: url("/star.png");
+     height : 32px;
+   }

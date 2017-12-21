@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class = "container-fluid pt-5 offset-2 col-8">
+    <div class="row mx-5 pb-5">
+      <div class="col-5 offset-1">
+        <img class="img-thumbnail "
+          src="https://www.decathlon.fr/media/{{ product.image_path }}"/>
+      </div>
+      <div class="col-6 img-thumbnail ">
+        <div class="row">
+          <h4> {{ product.title }}</h4>
+        </div>
+        <div class="row">
+          <p> {{ product.min_price }} €</p>
+        </div>
+        <div class="row pb-4">
+          <div class="jauge">
+            <div style = "width : {{ product.rating*20 }}%;">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <p> {{ product.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
