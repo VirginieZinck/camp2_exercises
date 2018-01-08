@@ -1,32 +1,36 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <div class = "container-fluid offset-2 col-8">
+  <div class = "container-fluid offset-1 col-8">
     <div class="row pb-2">
-      <h1>{{ category.label }}</h1>
-    </div>
-    <div class="dropdown  pb-2">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Categories
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        {% for cat in categories %}
-          <a class="dropdown-item" href="http://localhost:3000/categories/{{ cat.id }}">{{cat.label}}</a>
-        {% endfor %}
+      <div class="dropdown col-1">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          {% for cat in categories %}
+            <a class="dropdown-item" href="http://localhost:3000/categories/{{ cat.id }}">{{cat.label}}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-8 offset-2">
+        <h1>{{ category.label }}</h1>
       </div>
     </div>
+  </div>
 
 
+  <div class = "container-fluid offset-2 col-8">
     <div class="row mx-5 pb-5">
       {% for item in products %}
-          <div class="card border col-4">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img class="embed-responsive-item card-img-top"
-                src="https://www.decathlon.fr/media/{{ item.image_path }}"/>
-            </div>
-            <div class="card-body border">
-                 <a href="http://localhost:3000/products/{{ item.id }}" class="card-link">{{ item.title }}</a>
-            </div>
+        <div class="card border col-4">
+          <div class="embed-responsive embed-responsive-1by1">
+            <img class="embed-responsive-item card-img-top"
+              src="https://www.decathlon.fr/media/{{ item.image_path }}"/>
+          </div>
+          <div class="card-body border">
+               <a href="http://localhost:3000/products/{{ item.id }}" class="card-link">{{ item.title }}</a>
+          </div>
         </div>
       {% else %}
         <span>category empty</span>
