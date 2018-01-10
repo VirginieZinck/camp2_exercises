@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Row from './Row';
+import TaskForm from './TaskForm';
 
 
 class ToDoList extends Component {
@@ -9,48 +10,61 @@ class ToDoList extends Component {
     super(props);
     this.state = {list:[
       {status:"Done",label:"Faire mon EAD"},
-      {status:"Open",label:"Dentiste"}
+      {status:"ToDo",label:"Dentiste"}
     ]};
   }
 
-  checked(item) {
+  checked = (item) => {
     return item.status==="Done";
   }
 
-  onClick(item,index) {
+  onClick = (item,index) => {
     let newList = this.state.list;
+
+    if (newList[index].status === "Done") {
+      newList[index].status = "Todo";
+    } else {
     newList[index].status = "Done";
+    }
 
     this.setState({list: newList}, () => console.log(this.state))
+  }
+
+  createTask = (label) => {
+    let newList = this.state.list;
+    newList.push({status:"Todo",label:label});
+
+    this.setState({list: newList}, () => console.log(this.state))
+  }
+
+  deleteTask = (index) => {
+    let newList = this.state.list;
+    newList.splice(index,1);
+
+    this.setState({list: newList}, () => console.log(this.state))
+
   }
 
   render() {
     return (
       <div className="container">
-        <form >
-          <div className="form-group pt-3">
-            <label className="mx-2" for="newTask">New task </label>
-            <input type="text" className="form-control-sm mx-2" id="newTask" placeholder="Enter task label"/>
-            <button type="submit" className="btn btn-primary">Create</button>
-          </div>
-        </form>
+
+        <TaskForm function={this.createTask}/>
+
         <div className="row">
             <th> Tasks </th>
         </div>
-          {this.state.list.map((item,index)=>{
+
+        {this.state.list.map( (item,index)=>{
           return (
-            <div className="row">
-              <div className="col-2">
-                <input
-                  type="checkbox"
-                  checked={this.checked(item)}
-                  name="{item.status}"
-                  onClick={()=>this.onClick(item, index)}
-                />
-              </div>
-              <div className="col">{item.label}</div>
-            </div>
-          )
+            <Row
+              item={item}
+              index={index}
+              checked={this.checked}
+              onClick={this.onClick}
+              onDelete={this.deleteTask}
+            />
+          );
         })}
       </div>
     )
