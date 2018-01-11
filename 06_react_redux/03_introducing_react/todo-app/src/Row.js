@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
 import Label from './Label';
+import DeleteButton from './DeleteButton';
+import Checkbox from './Checkbox';
 
 function Row(props) {
-  return (
-    <div className="row">
-      <div className="col">
-        <input
-          type="checkbox"
-          checked={props.checked(props.item)}
-          name="{item.status}"
-          onClick={()=>props.onClick(props.item, props.index)}
-        />
-      </div>
 
-      <Label
-        checked={props.checked}
-        item = {props.item}
-      />
+    return (
+      <div className="row pt-1">
+        <div className="col">
+          <Checkbox
+            item={props.item}
+            index={props.index}
+            checked={props.checked}
+            onCheck={()=>props.onCheck(props.item, props.index)}
+          />
+        </div>
 
-      <div className="col">
-        <button
-          type="submit"
-          onClick={()=>props.onDelete(props.index)}
-          className="btn btn-primary"
-        >
-          Delete
-        </button>
+        <div className="col">
+          <Label checked={props.checked} item={props.item}/>
+        </div>
+
+        <div className="col">
+          <DeleteButton onClick={()=>props.onDelete(props.index)}/>
+        </div>
       </div>
-    </div>
-  );
+    );
 }
 
 export default Row;

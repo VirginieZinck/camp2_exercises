@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Cell extends Component {
 
   disable() {
-    if (this.props.value) {
+    if ((this.props.value) || (this.props.disable)) {
       return true;
     } else {
       return false;
@@ -18,7 +18,7 @@ class Cell extends Component {
           type="submit"
           disabled={this.disable()}
           onClick={()=>{
-            this.props.function(
+            this.props.onUpdate(
               this.props.nextPlayer,
               this.props.row,
               this.props.col

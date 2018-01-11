@@ -5,15 +5,15 @@ class DeleteButton extends React.Component {
 
   handleClick = () => {
     console.log('The delete button was clicked.');
-    this.props.function(this.props.index);
+    this.props.onClick(this.props.index);
   }
 
   render() {
     return (
       <button
         type="submit"
-        onSubmit={this.handleClick}
-        className="btn btn-primary"
+        onClick={this.handleClick}
+        className="btn btn-sm btn-secondary"
       >
         Delete
       </button>

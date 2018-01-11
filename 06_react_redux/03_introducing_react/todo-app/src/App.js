@@ -18,7 +18,7 @@ class ToDoList extends Component {
     return item.status==="Done";
   }
 
-  onClick = (item,index) => {
+  checkTask = (item,index) => {
     let newList = this.state.list;
 
     if (newList[index].status === "Done") {
@@ -61,7 +61,7 @@ class ToDoList extends Component {
               item={item}
               index={index}
               checked={this.checked}
-              onClick={this.onClick}
+              onCheck={this.checkTask}
               onDelete={this.deleteTask}
             />
           );
