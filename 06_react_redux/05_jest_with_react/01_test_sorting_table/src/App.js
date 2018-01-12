@@ -4,9 +4,9 @@ import _ from "underscore";
 function Row(props) {
   return (
     <tr>
-      <td>{props.decathlon_id}</td>
-      <td>{props.title}</td>
-      <td>{props.price}</td>
+      <td id="td1">{props.decathlon_id}</td>
+      <td id="td2">{props.title}</td>
+      <td id="td3">{props.price}</td>
     </tr>
   );
 }
@@ -41,9 +41,9 @@ class App extends Component {
       <table>
         <thead>
           <tr>
-            <th onClick={() => this.filter("decathlon_id")}>ID</th>
-            <th onClick={() => this.filter("title")}>Title</th>
-            <th onClick={() => this.filter("price")}>Price</th>
+            <th id="th1" onClick={() => this.filter("decathlon_id")}>ID</th>
+            <th id="th2" onClick={() => this.filter("title")}>Title</th>
+            <th id="th3" onClick={() => this.filter("price")}>Price</th>
           </tr>
         </thead>
         {sortedLines.map(Row)}

@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test on initial render 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th
+        id="th1"
+        onClick={[Function]}
+      >
+        ID
+      </th>
+      <th
+        id="th2"
+        onClick={[Function]}
+      >
+        Title
+      </th>
+      <th
+        id="th3"
+        onClick={[Function]}
+      >
+        Price
+      </th>
+    </tr>
+  </thead>
+</table>
+`;
+
+exports[`Snapshot test on initial render with props 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th
+        id="th1"
+        onClick={[Function]}
+      >
+        ID
+      </th>
+      <th
+        id="th2"
+        onClick={[Function]}
+      >
+        Title
+      </th>
+      <th
+        id="th3"
+        onClick={[Function]}
+      >
+        Price
+      </th>
+    </tr>
+  </thead>
+  <tr>
+    <td
+      id="td1"
+    >
+      8282689
+    </td>
+    <td
+      id="td2"
+    >
+      Corne chasse 14cm
+    </td>
+    <td
+      id="td3"
+    >
+      9.99
+    </td>
+  </tr>
+  <tr>
+    <td
+      id="td1"
+    >
+      8354464
+    </td>
+    <td
+      id="td2"
+    >
+      Basic L print Long Gold Fusion
+    </td>
+    <td
+      id="td3"
+    >
+      9.99
+    </td>
+  </tr>
+  <tr>
+    <td
+      id="td1"
+    >
+      8380024
+    </td>
+    <td
+      id="td2"
+    >
+      RUN ELIOPRIME
+    </td>
+    <td
+      id="td3"
+    >
+      54.99
+    </td>
+  </tr>
+</table>
+`;
