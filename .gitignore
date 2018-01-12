@@ -5,3 +5,4 @@ gameLog.json
 /*.result
 env_vars.dev
 fixtures
+.env
