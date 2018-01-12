@@ -8,7 +8,7 @@ const GOOGLE_PLACES_API_KEY=process.env.REACT_APP_GOOGLE_PLACES_API_KEY;
 // and then pass the coordinates to the previous function weatherByLatitudeAndLongitude and then display the temperature.
 
 
-function fetchLocationByAdress(address) {
+function fetchLocationByAdress(fetch, address) {
 
   return fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(address)}&key=${GOOGLE_PLACES_API_KEY}`,
@@ -18,6 +18,10 @@ function fetchLocationByAdress(address) {
     })
     .then((result) => {
       const locationObject=result.json();
+      return locationObject;
+    })
+    .then((locationObject) => {
+      console.log("locationObject",locationObject);
       return locationObject;
     })
     .then((locationObject) => {
@@ -115,7 +119,7 @@ function getFullHours(hours) {
 
 function weatherAt(address) {
 
-  return fetchLocationByAdress(address)
+  return fetchLocationByAdress(fetch,address)
     .then((location) => {
       console.log("location after fetch",location);
       return location;
@@ -133,5 +137,6 @@ function weatherAt(address) {
 }
 
 module.exports = {
-  weatherAt:weatherAt
+  weatherAt:weatherAt,
+  fetchLocationByAdress:fetchLocationByAdress
 };
