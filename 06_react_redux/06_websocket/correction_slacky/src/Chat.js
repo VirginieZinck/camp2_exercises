@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux'
-
 
 class Chat extends Component {
   constructor(props) {
@@ -16,7 +14,7 @@ class Chat extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.sendMessage(this.props.userName,this.state.newMessage);
+    this.props.sendMessage(this.state.newMessage);
     this.setState({ newMessage: "" });
   };
 
@@ -28,8 +26,6 @@ class Chat extends Component {
   }
 
   render() {
-
-    console.log("props in chat", this.props)
     return (
       <div className="Chat">
         <div
@@ -66,20 +62,4 @@ class Chat extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    userName: state.userName,
-    messages: state.messages
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    sendMessage: (userName, message) => dispatch({type: "SENDMESSAGE",userName:userName, message:message})
-  }
-}
-
-
-const ConnectedChat = connect(mapStateToProps, mapDispatchToProps)(Chat);
-
-export default ConnectedChat;
+export default Chat;

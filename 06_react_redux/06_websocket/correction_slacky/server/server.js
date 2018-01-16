@@ -5,7 +5,7 @@ const server = require("http").createServer();
 const app = express();
 
 // This will store the messages for the time of the session
-const messages = [{userName:"",message:""}];
+const messages = [];
 
 // Launch the Websocket server
 const wss = new WebSocket.Server({ server });

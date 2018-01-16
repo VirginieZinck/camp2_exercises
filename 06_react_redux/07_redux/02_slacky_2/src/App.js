@@ -1,21 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
-import Login from "./Login";
-import Chat from "./Chat";
+import ConnectedLogin from "./Login";
+import ConnectedChat from "./Chat";
+import { connect } from 'react-redux';
+
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userName: null,
-      messages: [],
-    };
-    // Attaching the websocket to our App so we can reuse it
-    this.websocket = new WebSocket("ws://localhost:8080");
-  }
+
   componentDidMount() {
     // Listen for messages
-    this.websocket.addEventListener("message", event => {
+    this.props.websocket.addEventListener("message", event => {
       const message = JSON.parse(event.data);
       console.log("Message from server ", message);
       switch (message.type) {
@@ -23,31 +17,12 @@ class App extends Component {
         default:
           return;
         case "MESSAGES":
-          this.setState({ messages: message.data });
+          // this.setState({ messages: message.data });
+          this.props.updateMessages(message.data);
           return;
       }
     });
   }
-
-  handleUserName = userName => {
-    this.setState({ userName: userName });
-    this.websocket.send(
-      JSON.stringify({
-        type: "LOGIN",
-        userName: userName
-      })
-    );
-  };
-
-  sendMessage = message => {
-    this.websocket.send(
-      JSON.stringify({
-        type: "NEW_MESSAGE",
-        userName: this.state.userName,
-        message: message
-      })
-    );
-  };
 
   render() {
     return (
@@ -56,14 +31,30 @@ class App extends Component {
           <h1 className="App-title">Slacky</h1>
         </header>
 
-        {this.state.userName ? (
-          <Chat sendMessage={this.sendMessage} messages={this.state.messages} />
+        {this.props.userName ? (
+          <ConnectedChat />
         ) : (
-          <Login handleUserName={this.handleUserName} />
+          <ConnectedLogin />
         )}
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    userName: state.userName,
+    websocket: state.websocket
+
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    updateMessages: (messages) => dispatch({type: "UPDATEMESSAGES",messages:messages})
+  }
+}
+
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default ConnectedApp;

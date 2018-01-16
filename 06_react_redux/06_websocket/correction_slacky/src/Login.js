@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-
 
 class Login extends Component {
   constructor(props) {
@@ -36,13 +34,4 @@ class Login extends Component {
   }
 }
 
-
-function mapDispatchToProps(dispatch) {
-  return {
-    handleUserName: (userName) => dispatch({type: "LOGIN",userName:userName})
-  }
-}
-
-const ConnectedLogin = connect(null, mapDispatchToProps)(Login);
-
-export default ConnectedLogin;
+export default Login;
