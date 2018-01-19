@@ -20,6 +20,7 @@
     "node-fetch": "^1.7.3",
     "pg": "^7.4.0",
     "phoenix-channels": "^1.0.0",
+    "react-redux": "^5.0.6",
     "request": "^2.83.0",
     "ws": "^4.0.0"
   },
