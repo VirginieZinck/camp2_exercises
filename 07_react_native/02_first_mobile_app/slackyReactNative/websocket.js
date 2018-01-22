@@ -10,8 +10,10 @@ function init() {
   websocket.addEventListener("message", event => {
     const message = JSON.parse(event.data);
     console.log("Message from server ", message);
+
     switch (message.type) {
       case "MESSAGES":
+        console.log("message.data",message.data);
         store.dispatch({
           type: "WS_UPDATE_MESSAGES",
           messages: message.data

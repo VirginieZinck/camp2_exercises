@@ -26,6 +26,8 @@ WebsocketServer.on("connection", function connection(ws, req) {
           channel: message.channel
         });
 
+        console.log("New message received on server :",message.userName, message.message, message.channel);
+
         // Sends all messages to all connected clients
         WebsocketServer.clients.forEach((client) => {
           if (client.readyState === WebSocket.OPEN) {

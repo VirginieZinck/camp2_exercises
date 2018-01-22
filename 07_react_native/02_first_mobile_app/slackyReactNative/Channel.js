@@ -4,63 +4,92 @@ import { sendMessageToWS } from "./websocket"
 import { StyleSheet, Text, View, FlatList, TextInput } from 'react-native';
 
 class Channel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
 
   handleSubmit = () => {
     sendMessageToWS(this.props.chatMessageValue, this.props.channel);
     this.props.sendMessage();
+    console.log("message value reset after sent", this.props.chatMessageValue);
   };
 
   render() {
+    console.log("Messages list refreshed",this.props.messages);
+    console.log("this.props.messages[0]",this.props.messages[0]);
+
     return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center'
-      }}>
+      <View style={styles.channel}>
+
+        {this.props.messages.length>0
+          ? (
+            <FlatList
+              style={styles.list}
+              data={this.props.messages}
+              renderItem={({item}) =>
+                <Text style={styles.message}>
+                  {item.userName} : {item.message}
+                </Text>
+              }
+            />
+          )
+          : (null)
+        }
         <TextInput
-          style={{height: 10, padding:20, backgroundColor: 'powderblue'}}
+          style={styles.input}
           placeholder="Type your message"
           onChangeText={(text) => {this.props.updateChatMessageValue(text);}}
-          onSubmitEditing={() => {this.handleSubmit}}
+          onSubmitEditing={this.handleSubmit}
           value={this.props.chatMessageValue}
         />
-        <FlatList
-          style={styles.container}
-          data={this.props.messages}
-          renderItem={({message}) => <Text style={styles.message}>{message.userName} : {message.message}</Text>
-          }
-        />
+
+
+
       </View>
     );
   }
 }
 
-
 const styles = StyleSheet.create({
-  container: {
-   flex: 1,
-   paddingTop: 22
+  channel: {
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  list: {
+   flexGrow: 2,
+   backgroundColor: 'white'
   },
   message: {
-    padding: 10,
-    fontSize: 6,
-    height: 10
+    fontSize: 20
   },
+  input: {
+    flexGrow: 1,
+    backgroundColor: 'white',
+    borderWidth: 5,
+    borderColor: 'black',
+    fontSize: 20,
+    height:80,
+    alignSelf : 'stretch'
+  }
 })
 
 function mapStateToProps(state) {
   return {
     chatMessageValue: state.chatMessageValue,
-    messages: state.messages,
+    messages: state.messages
   }
 }
 
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateChatMessageValue: (event) => dispatch({
+    updateChatMessageValue: (text) => dispatch({
       type: "UPDATE_CHAT_INPUT_VALUE",
-      value: event.target.value
+      value: text
     }),
     sendMessage: () => dispatch({
       type: "SEND_MESSAGE"
